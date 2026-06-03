@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <meta name="format-detection" content="telephone=no" />
+  <title data-i18n="te.meta_title">Технология консенсуса — ECG Reader Docs</title>
+  <meta name="description" data-i18n-attr="content:te.meta_desc" content="Движок консенсуса ECG Reader: формула согласия, компоненты, safety-override, rule-engine на клинических правилах, микросервисная архитектура и безопасность данных." />
+  <link rel="canonical" href="https://docs.ecg-reader.com/public/technology.html" />
+  <link rel="icon" type="image/svg+xml" href="../svg/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Cairo:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/hub.css" />
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand" aria-label="ECG Reader Docs">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16 L8 16 L11 8 L15 24 L18 12 L21 18 L24 16 L30 16" /></svg>
+        <span>ECG Reader</span><span class="tag">Docs</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html" data-i18n="docnav.hub">Хаб</a></li>
+          <li><a href="https://ecg-reader.com/" data-i18n="nav.site">Основной сайт</a></li>
+        </ul>
+      </nav>
+      <div class="nav-tools">
+        <div class="menu" id="theme-menu">
+          <button class="menu-trigger" aria-haspopup="menu" aria-label="Theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span id="theme-current">Dark</span></button>
+          <div class="menu-list" id="theme-list" role="menu"></div>
+        </div>
+        <div class="menu" id="lang-menu">
+          <button class="menu-trigger" aria-haspopup="menu" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><span id="lang-current">RU</span></button>
+          <div class="menu-list" id="lang-list" role="menu"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <button class="doc-side-toggle"><span data-i18n="side.sections">Разделы</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="side-body">
+        <div class="side-group" data-i18n="side.grp_about">О проекте</div>
+        <ul>
+          <li><a href="about.html" data-i18n="side.about">Миссия и позиционирование</a></li>
+          <li><a href="product.html" data-i18n="side.product">Продукт: ЭКГ ХАБ</a></li>
+          <li><a href="technology.html" data-i18n="side.technology">Технология консенсуса</a></li>
+        </ul>
+        <div class="side-group" data-i18n="side.grp_evidence">Доказательность</div>
+        <ul>
+          <li><a href="clinical-evidence.html" data-i18n="side.evidence">Клиническая база</a></li>
+          <li><a href="regulatory.html" data-i18n="side.regulatory">Регуляторный статус</a></li>
+          <li><a href="publications.html" data-i18n="side.publications">Источники и публикации</a></li>
+        </ul>
+        <div class="side-group" data-i18n="side.grp_more">Ещё</div>
+        <ul>
+          <li><a href="../index.html" data-i18n="side.back_hub">← Документарный хаб</a></li>
+          <li><a href="https://ecg-reader.com/" data-i18n="nav.site">Основной сайт</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-breadcrumb"><a href="../index.html" data-i18n="docnav.hub">Хаб</a><span>/</span><a href="#" data-i18n="side.grp_about">О проекте</a><span>/</span><span data-i18n="side.technology">Технология консенсуса</span></div>
+      <span class="doc-kicker" data-i18n="te.kicker">Технология</span>
+      <h1 data-i18n="te.title">Движок консенсуса и rule-engine</h1>
+      <p class="doc-lead" data-i18n="te.lead">Согласие двух моделей выражается одним прозрачным числом. Поверх него работают жёсткие правила безопасности на клинических критериях — они не дают пропустить жизнеугрожающее состояние даже при «согласии» моделей.</p>
+
+      <div class="prose">
+        <h2 id="formula" data-i18n="te.h_formula">Формула согласия</h2>
+        <p data-i18n="te.p_formula1">Интегральный показатель согласия <code>K</code> — взвешенная сумма четырёх компонент. Веса отражают клинический приоритет: срочность важнее формального совпадения диагноза.</p>
+        <div class="formula"><span class="accent">K</span> = 0.40·U &nbsp;+&nbsp; 0.30·D &nbsp;+&nbsp; 0.15·M &nbsp;+&nbsp; 0.15·R</div>
+
+        <h2 id="components" data-i18n="te.h_components">Компоненты</h2>
+        <ul>
+          <li data-i18n="te.c_u"><strong>U — срочность (0.40):</strong> совпадение уровней неотложности, присвоенных каждой моделью</li>
+          <li data-i18n="te.c_d"><strong>D — диагноз (0.30):</strong> пересечение диагностических меток с учётом иерархии (родственные диагнозы засчитываются частично)</li>
+          <li data-i18n="te.c_m"><strong>M — измерения (0.15):</strong> согласованность числовых параметров (ЧСС, интервалы PR/QRS/QT) с поправкой на качество записи</li>
+          <li data-i18n="te.c_r"><strong>R — ритм (0.15):</strong> совпадение классификации ритма</li>
+        </ul>
+
+        <h2 id="safety" data-i18n="te.h_safety">Правила безопасности (overrides)</h2>
+        <p data-i18n="te.p_safety1">Безопасность приоритетнее согласия. Несколько жёстких правил перекрывают расчёт <code>K</code>:</p>
+        <div class="callout danger">
+          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <span data-i18n="te.note_safety"><strong>Safety override.</strong> Любой «красный» (жизнеугрожающий) флаг хотя бы одной модели → ALERT. Расхождение по критическому диагнозу → ALERT. Превышение порога QTc → отдельное предупреждение о риске torsades.</span>
+        </div>
+
+        <h2 id="rules" data-i18n="te.h_rules">Rule-engine</h2>
+        <p data-i18n="te.p_rules1">Параллельно ИИ работает движок правил на конфигурируемых YAML-критериях со ссылками на международные стандарты. Базовые правила:</p>
+        <ul>
+          <li data-i18n="te.r_stemi"><strong>STEMI</strong> — критерии Четвёртого универсального определения инфаркта (4UDMI 2018) + AHA</li>
+          <li data-i18n="te.r_av"><strong>АВ-блокада III ст.</strong> — полная атриовентрикулярная диссоциация</li>
+          <li data-i18n="te.r_qt"><strong>Удлинённый QT</strong> — двойные пороги 480 / 500 мс и риск torsades</li>
+        </ul>
+
+        <h2 id="arch" data-i18n="te.h_arch">Архитектура</h2>
+        <p data-i18n="te.p_arch1">Бэкенд — микросервисы на FastAPI. Конвейер обработки: приём → предобработка сигнала → параллельно (ML-инференс + правила + партнёрский ИИ) → движок консенсуса → генерация отчёта → неизменяемый аудит.</p>
+        <div class="formula" data-i18n="te.pipeline">ingest → preproc → [ ML ‖ rules ‖ partner ] → consensus → report → audit</div>
+        <p data-i18n="te.p_arch2">Предобработка соответствует AHA Standardization (фильтры 0.05–150 Гц, режекторный 50/60 Гц, ресемплинг 500 Гц, контроль качества по AAMI). Отчёты отдаются в JSON, HL7 FHIR R4, DICOM SR и PDF.</p>
+
+        <h2 id="security" data-i18n="te.h_security">Безопасность данных</h2>
+        <p data-i18n="te.p_security1">Персональные данные граждан РФ обрабатываются на территории России (152-ФЗ + 242-ФЗ), целевой уровень защищённости УЗ-2 по требованиям ФСТЭК. Все клинически значимые события пишутся в неизменяемый аудит-лог с хеш-цепочкой (SHA-256), пригодный для WORM-хранения. Для международного контура предусмотрены контуры под GDPR и HIPAA.</p>
+      </div>
+
+      <nav class="doc-pagenav">
+        <a class="prev" href="product.html"><div class="pn-dir" data-i18n="pn.prev">← Назад</div><div class="pn-title" data-i18n="side.product">Продукт: ЭКГ ХАБ</div></a>
+        <a class="next" href="clinical-evidence.html"><div class="pn-dir" data-i18n="pn.next">Далее →</div><div class="pn-title" data-i18n="side.evidence">Клиническая база</div></a>
+      </nav>
+    </main>
+
+    <aside class="doc-toc" aria-label="On this page">
+      <div class="toc-title" data-i18n="toc.title">На странице</div>
+      <ul></ul>
+    </aside>
+  </div>
+
+  <div class="legal-bar" id="legal-bar" role="note">
+    <span class="txt" data-i18n="legal.text">Информационный ресурс. ECG Reader — программное средство клинической поддержки принятия решений (CDS / SaMD), не заменяет очную консультацию врача. На сайте нет форм сбора персональных данных, cookie и аналитики (152-ФЗ).</span>
+    <button class="btn btn-primary btn-sm" data-act="ok" data-i18n="legal.ok">Понятно</button>
+  </div>
+
+  <script src="../assets/i18n.js"></script>
+  <script>
+  (function(){
+    var en = {
+      "docnav.hub":"Hub","toc.title":"On this page","pn.next":"Next →","pn.prev":"← Back","side.sections":"Sections",
+      "side.grp_about":"Project","side.grp_evidence":"Evidence","side.grp_more":"More",
+      "side.about":"Mission & positioning","side.product":"Product: ECG Hub","side.technology":"Consensus technology",
+      "side.evidence":"Clinical evidence","side.regulatory":"Regulatory status","side.publications":"Sources & publications","side.back_hub":"← Documentation hub",
+      "te.meta_title":"Consensus technology — ECG Reader Docs",
+      "te.meta_desc":"The ECG Reader consensus engine: agreement formula, components, safety overrides, a clinical rule-engine, microservice architecture and data security.",
+      "te.kicker":"Technology","te.title":"Consensus engine & rule-engine",
+      "te.lead":"Agreement between the two models is expressed as a single transparent number. On top of it run hard safety rules based on clinical criteria — they prevent a life-threatening condition being missed even when the models “agree”.",
+      "te.h_formula":"Agreement formula",
+      "te.p_formula1":"The integral agreement score <code>K</code> is a weighted sum of four components. The weights reflect clinical priority: urgency matters more than a formal diagnosis match.",
+      "te.h_components":"Components",
+      "te.c_u":"<strong>U — urgency (0.40):</strong> match between the urgency levels each model assigned",
+      "te.c_d":"<strong>D — diagnosis (0.30):</strong> overlap of diagnostic labels with a hierarchy (related diagnoses count partially)",
+      "te.c_m":"<strong>M — measurements (0.15):</strong> consistency of numeric parameters (HR, PR/QRS/QT intervals), adjusted for recording quality",
+      "te.c_r":"<strong>R — rhythm (0.15):</strong> match of rhythm classification",
+      "te.h_safety":"Safety rules (overrides)",
+      "te.p_safety1":"Safety takes priority over agreement. Several hard rules override the <code>K</code> computation:",
+      "te.note_safety":"<strong>Safety override.</strong> Any “red” (life-threatening) flag from either model → ALERT. A mismatch on a critical diagnosis → ALERT. Exceeding the QTc threshold → a separate torsades-risk warning.",
+      "te.h_rules":"Rule-engine",
+      "te.p_rules1":"Alongside the AI, a rule-engine runs on configurable YAML criteria referencing international standards. Baseline rules:",
+      "te.r_stemi":"<strong>STEMI</strong> — Fourth Universal Definition of MI (4UDMI 2018) + AHA criteria",
+      "te.r_av":"<strong>3rd-degree AV block</strong> — complete atrioventricular dissociation",
+      "te.r_qt":"<strong>Long QT</strong> — dual thresholds 480 / 500 ms and torsades risk",
+      "te.h_arch":"Architecture",
+      "te.p_arch1":"The backend is FastAPI microservices. Processing pipeline: ingest → signal preprocessing → in parallel (ML inference + rules + partner AI) → consensus engine → report generation → immutable audit.",
+      "te.pipeline":"ingest → preproc → [ ML ‖ rules ‖ partner ] → consensus → report → audit",
+      "te.p_arch2":"Preprocessing follows AHA Standardization (0.05–150 Hz filters, 50/60 Hz notch, 500 Hz resampling, AAMI quality control). Reports are produced in JSON, HL7 FHIR R4, DICOM SR and PDF.",
+      "te.h_security":"Data security",
+      "te.p_security1":"Personal data of Russian citizens is processed within Russia (152-FZ + 242-FZ), with a target protection level UZ-2 per FSTEC requirements. All clinically significant events are written to an immutable audit log with a SHA-256 hash chain, suitable for WORM storage. GDPR and HIPAA circuits are provided for the international deployment."
+    };
+    window.I18N.en = Object.assign(window.I18N.en || {}, en);
+  })();
+  </script>
+  <script src="../assets/app.js"></script>
+  <script src="../assets/docs.js"></script>
+</body>
+</html>

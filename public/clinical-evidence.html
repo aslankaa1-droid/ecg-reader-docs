@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <meta name="format-detection" content="telephone=no" />
+  <title data-i18n="ce.meta_title">Клиническая база — ECG Reader Docs</title>
+  <meta name="description" data-i18n-attr="content:ce.meta_desc" content="Доказательная база ECG Reader: корпус интерпретированных ЭКГ, публикации о врачебных ошибках, целевые метрики валидации и протокол клинических исследований." />
+  <link rel="canonical" href="https://docs.ecg-reader.com/public/clinical-evidence.html" />
+  <link rel="icon" type="image/svg+xml" href="../svg/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Cairo:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/hub.css" />
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand" aria-label="ECG Reader Docs">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16 L8 16 L11 8 L15 24 L18 12 L21 18 L24 16 L30 16" /></svg>
+        <span>ECG Reader</span><span class="tag">Docs</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html" data-i18n="docnav.hub">Хаб</a></li>
+          <li><a href="https://ecg-reader.com/" data-i18n="nav.site">Основной сайт</a></li>
+        </ul>
+      </nav>
+      <div class="nav-tools">
+        <div class="menu" id="theme-menu">
+          <button class="menu-trigger" aria-haspopup="menu" aria-label="Theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span id="theme-current">Dark</span></button>
+          <div class="menu-list" id="theme-list" role="menu"></div>
+        </div>
+        <div class="menu" id="lang-menu">
+          <button class="menu-trigger" aria-haspopup="menu" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><span id="lang-current">RU</span></button>
+          <div class="menu-list" id="lang-list" role="menu"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="doc-shell">
+    <aside class="doc-sidebar">
+      <button class="doc-side-toggle"><span data-i18n="side.sections">Разделы</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="side-body">
+        <div class="side-group" data-i18n="side.grp_about">О проекте</div>
+        <ul>
+          <li><a href="about.html" data-i18n="side.about">Миссия и позиционирование</a></li>
+          <li><a href="product.html" data-i18n="side.product">Продукт: ЭКГ ХАБ</a></li>
+          <li><a href="technology.html" data-i18n="side.technology">Технология консенсуса</a></li>
+        </ul>
+        <div class="side-group" data-i18n="side.grp_evidence">Доказательность</div>
+        <ul>
+          <li><a href="clinical-evidence.html" data-i18n="side.evidence">Клиническая база</a></li>
+          <li><a href="regulatory.html" data-i18n="side.regulatory">Регуляторный статус</a></li>
+          <li><a href="publications.html" data-i18n="side.publications">Источники и публикации</a></li>
+        </ul>
+        <div class="side-group" data-i18n="side.grp_more">Ещё</div>
+        <ul>
+          <li><a href="../index.html" data-i18n="side.back_hub">← Документарный хаб</a></li>
+          <li><a href="https://ecg-reader.com/" data-i18n="nav.site">Основной сайт</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-breadcrumb"><a href="../index.html" data-i18n="docnav.hub">Хаб</a><span>/</span><a href="#" data-i18n="side.grp_evidence">Доказательность</a><span>/</span><span data-i18n="side.evidence">Клиническая база</span></div>
+      <span class="doc-kicker" data-i18n="ce.kicker">Доказательность</span>
+      <h1 data-i18n="ce.title">Клиническая доказательная база</h1>
+      <p class="doc-lead" data-i18n="ce.lead">Подход строится на открытых корпусах данных и опубликованной литературе о реальных ошибках интерпретации ЭКГ. Метрики ниже — целевые показатели валидации, а не достигнутые клинические результаты.</p>
+
+      <div class="prose">
+        <h2 id="counters" data-i18n="ce.h_counters">Три счётчика доказательной базы</h2>
+        <p data-i18n="ce.p_counters1">Доказательная часть документирована тремя публичными счётчиками — корпус данных, литература об ошибках и общий объём проработанных материалов.</p>
+        <div class="metric-row">
+          <div class="metric"><div class="val">≈3,22<span style="font-size:14px">М</span></div><div class="lbl" data-i18n="ce.m_corpus">ЭКГ-записей в корпусе</div></div>
+          <div class="metric"><div class="val">18</div><div class="lbl" data-i18n="ce.m_errpubs">публикаций об ошибках</div></div>
+          <div class="metric"><div class="val">≈345</div><div class="lbl" data-i18n="ce.m_units">единиц материалов</div></div>
+        </div>
+
+        <h2 id="corpus" data-i18n="ce.h_corpus">Корпус интерпретированных ЭКГ</h2>
+        <p data-i18n="ce.p_corpus1">Около <strong>3,22 млн</strong> коротких ЭКГ-записей из открытых корпусов (CODE, MIMIC-IV-ECG, Chapman-Shaoxing, PTB-XL, Georgia, CinC2017, CPSC2018, SaMi-Trop, PTB Diagnostic, LUDB, INCART, семейство MIT-BIH) плюс длительный холтеровский корпус Icentia11k (≈11 000 пациентов). В исследовательскую популяцию milestone-публикаций AI-ECG входят миллионы дополнительных записей.</p>
+
+        <h2 id="errors" data-i18n="ce.h_errors">Публикации о врачебных ошибках</h2>
+        <p data-i18n="ce.p_errors1">Опубликованные данные о частоте ошибочной или пропущенной интерпретации ЭКГ — обоснование клинической потребности. Диапазоны по нозологиям из 18 публикаций:</p>
+        <table class="doc-table">
+          <thead><tr><th data-i18n="ce.t_noso">Нозология</th><th data-i18n="ce.t_err">Частота ошибок (диапазон)</th></tr></thead>
+          <tbody>
+            <tr><td data-i18n="ce.e_afib">Фибрилляция предсердий</td><td>8–35%</td></tr>
+            <tr><td>STEMI</td><td>8–24%</td></tr>
+            <tr><td data-i18n="ce.e_av">АВ-блокады</td><td>6–14%</td></tr>
+            <tr><td data-i18n="ce.e_lvh">ГЛЖ</td><td>15–20%</td></tr>
+            <tr><td data-i18n="ce.e_qt">Удлинённый QT</td><td>60–75%</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="targets" data-i18n="ce.h_targets">Целевые метрики валидации</h2>
+        <div class="callout warn">
+          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <span data-i18n="ce.note_targets"><strong>Это цели, а не результаты.</strong> Значения ниже — целевые пороги программы валидации (DECIDE-AI), которые предстоит подтвердить на проспективных когортах. Они не являются заявлением о достигнутой точности.</span>
+        </div>
+        <div class="metric-row">
+          <div class="metric"><div class="val">0,992</div><div class="lbl">STEMI</div></div>
+          <div class="metric"><div class="val">0,974</div><div class="lbl">AFib</div></div>
+          <div class="metric"><div class="val">1,000</div><div class="lbl" data-i18n="ce.m_av3">АВ-блок III</div></div>
+          <div class="metric"><div class="val">0,997</div><div class="lbl" data-i18n="ce.m_lqt">Long QT</div></div>
+        </div>
+
+        <h2 id="protocol" data-i18n="ce.h_protocol">Протокол валидации</h2>
+        <p data-i18n="ce.p_protocol1">Валидация планируется по международным стандартам отчётности AI в медицине — TRIPOD+AI, STARD-AI, DECIDE-AI, GMLP (FDA), а также ГОСТ Р 59921. Предусмотрены три когорты нарастающей строгости:</p>
+        <ul>
+          <li data-i18n="ce.pr_c1"><strong>Когорта 1 (≈50 000):</strong> hold-out внутренняя валидация на размеченных данных</li>
+          <li data-i18n="ce.pr_c2"><strong>Когорта 2 (≈20 000):</strong> ретроспективная внешняя валидация</li>
+          <li data-i18n="ce.pr_c3"><strong>Когорта 3 (≈5 000):</strong> проспективное исследование по DECIDE-AI в реальном клиническом потоке</li>
+        </ul>
+        <p data-i18n="ce.p_protocol2">Контроль справедливости (fairness) по подгруппам — пол, возраст, дети — заложен как требование на каждом этапе.</p>
+      </div>
+
+      <nav class="doc-pagenav">
+        <a class="prev" href="technology.html"><div class="pn-dir" data-i18n="pn.prev">← Назад</div><div class="pn-title" data-i18n="side.technology">Технология консенсуса</div></a>
+        <a class="next" href="regulatory.html"><div class="pn-dir" data-i18n="pn.next">Далее →</div><div class="pn-title" data-i18n="side.regulatory">Регуляторный статус</div></a>
+      </nav>
+    </main>
+
+    <aside class="doc-toc" aria-label="On this page">
+      <div class="toc-title" data-i18n="toc.title">На странице</div>
+      <ul></ul>
+    </aside>
+  </div>
+
+  <div class="legal-bar" id="legal-bar" role="note">
+    <span class="txt" data-i18n="legal.text">Информационный ресурс. ECG Reader — программное средство клинической поддержки принятия решений (CDS / SaMD), не заменяет очную консультацию врача. На сайте нет форм сбора персональных данных, cookie и аналитики (152-ФЗ).</span>
+    <button class="btn btn-primary btn-sm" data-act="ok" data-i18n="legal.ok">Понятно</button>
+  </div>
+
+  <script src="../assets/i18n.js"></script>
+  <script>
+  (function(){
+    var en = {
+      "docnav.hub":"Hub","toc.title":"On this page","pn.next":"Next →","pn.prev":"← Back","side.sections":"Sections",
+      "side.grp_about":"Project","side.grp_evidence":"Evidence","side.grp_more":"More",
+      "side.about":"Mission & positioning","side.product":"Product: ECG Hub","side.technology":"Consensus technology",
+      "side.evidence":"Clinical evidence","side.regulatory":"Regulatory status","side.publications":"Sources & publications","side.back_hub":"← Documentation hub",
+      "ce.meta_title":"Clinical evidence — ECG Reader Docs",
+      "ce.meta_desc":"ECG Reader evidence base: the interpreted-ECG corpus, publications on diagnostic error, target validation metrics and the clinical study protocol.",
+      "ce.kicker":"Evidence","ce.title":"Clinical evidence base",
+      "ce.lead":"The approach builds on open data corpora and the published literature on real ECG misinterpretation. The metrics below are validation targets — not achieved clinical results.",
+      "ce.h_counters":"Three evidence counters",
+      "ce.p_counters1":"The evidence is documented with three public counters — the data corpus, the error literature, and the total volume of reviewed materials.",
+      "ce.m_corpus":"ECGs in the corpus","ce.m_errpubs":"publications on error","ce.m_units":"material units",
+      "ce.h_corpus":"Interpreted-ECG corpus",
+      "ce.p_corpus1":"About <strong>3.22 million</strong> short ECG records from open corpora (CODE, MIMIC-IV-ECG, Chapman-Shaoxing, PTB-XL, Georgia, CinC2017, CPSC2018, SaMi-Trop, PTB Diagnostic, LUDB, INCART, the MIT-BIH family) plus the long-term Holter corpus Icentia11k (≈11,000 patients). Millions more records appear in the study populations of milestone AI-ECG publications.",
+      "ce.h_errors":"Publications on diagnostic error",
+      "ce.p_errors1":"Published data on the rate of erroneous or missed ECG interpretation underpin the clinical need. Ranges by nosology from 18 publications:",
+      "ce.t_noso":"Nosology","ce.t_err":"Error rate (range)",
+      "ce.e_afib":"Atrial fibrillation","ce.e_av":"AV blocks","ce.e_lvh":"LVH","ce.e_qt":"Long QT",
+      "ce.h_targets":"Target validation metrics",
+      "ce.note_targets":"<strong>These are targets, not results.</strong> The values below are target thresholds of the validation programme (DECIDE-AI) to be confirmed on prospective cohorts. They are not a claim of achieved accuracy.",
+      "ce.m_av3":"AV block III","ce.m_lqt":"Long QT",
+      "ce.h_protocol":"Validation protocol",
+      "ce.p_protocol1":"Validation is planned per international AI-in-medicine reporting standards — TRIPOD+AI, STARD-AI, DECIDE-AI, GMLP (FDA), and GOST R 59921. Three cohorts of increasing rigour are foreseen:",
+      "ce.pr_c1":"<strong>Cohort 1 (≈50,000):</strong> internal hold-out validation on labelled data",
+      "ce.pr_c2":"<strong>Cohort 2 (≈20,000):</strong> retrospective external validation",
+      "ce.pr_c3":"<strong>Cohort 3 (≈5,000):</strong> prospective DECIDE-AI study in a real clinical workflow",
+      "ce.p_protocol2":"Subgroup fairness control — sex, age, paediatrics — is a requirement at every stage."
+    };
+    window.I18N.en = Object.assign(window.I18N.en || {}, en);
+  })();
+  </script>
+  <script src="../assets/app.js"></script>
+  <script src="../assets/docs.js"></script>
+</body>
+</html>
