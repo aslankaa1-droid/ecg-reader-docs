@@ -167,7 +167,66 @@
       "ce.pr_c3":"<strong>Cohort 3 (≈5,000):</strong> prospective DECIDE-AI study in a real clinical workflow",
       "ce.p_protocol2":"Subgroup fairness control — sex, age, paediatrics — is a requirement at every stage."
     };
+    var zh = {
+      "docnav.hub":"中心","toc.title":"本页内容","pn.next":"下一页 →","pn.prev":"← 返回","side.sections":"章节",
+      "side.grp_about":"项目","side.grp_evidence":"证据","side.grp_more":"更多",
+      "side.about":"使命与定位","side.product":"产品：ECG Hub","side.technology":"共识技术",
+      "side.evidence":"临床证据","side.regulatory":"监管状态","side.publications":"来源与文献","side.back_hub":"← 文档中心",
+      "ce.meta_title":"临床证据 — ECG Reader 文档",
+      "ce.meta_desc":"ECG Reader 证据基础：已判读心电图语料库、诊断差错文献、目标验证指标与临床研究方案。",
+      "ce.kicker":"证据","ce.title":"临床证据基础",
+      "ce.lead":"方法建立在开放数据语料库以及关于真实心电图误读的已发表文献之上。以下指标为验证目标，而非已取得的临床结果。",
+      "ce.h_counters":"三项证据计数",
+      "ce.p_counters1":"证据部分以三项公开计数记录——数据语料库、差错文献，以及所审阅材料的总量。",
+      "ce.m_corpus":"语料库心电图","ce.m_errpubs":"关于差错的文献","ce.m_units":"材料单元",
+      "ce.h_corpus":"已判读心电图语料库",
+      "ce.p_corpus1":"约 <strong>322 万</strong>条来自开放语料库的短时心电图记录（CODE、MIMIC-IV-ECG、Chapman-Shaoxing、PTB-XL、Georgia、CinC2017、CPSC2018、SaMi-Trop、PTB Diagnostic、LUDB、INCART、MIT-BIH 系列），外加长时 Holter 语料库 Icentia11k（约 11,000 名患者）。AI-ECG 里程碑文献的研究人群中还包含数以百万计的更多记录。",
+      "ce.h_errors":"关于诊断差错的文献",
+      "ce.p_errors1":"关于心电图误读或漏读发生率的已发表数据，构成临床需求的依据。来自 18 篇文献按病种的区间：",
+      "ce.t_noso":"病种","ce.t_err":"差错率（区间）",
+      "ce.e_afib":"心房颤动","ce.e_av":"房室传导阻滞","ce.e_lvh":"左室肥厚","ce.e_qt":"长 QT",
+      "ce.h_targets":"目标验证指标",
+      "ce.note_targets":"<strong>这些是目标，而非结果。</strong> 以下数值为验证计划（DECIDE-AI）的目标阈值，有待在前瞻性队列中确认。它们并非对已取得准确率的声明。",
+      "ce.m_av3":"三度房室阻滞","ce.m_lqt":"长 QT",
+      "ce.h_protocol":"验证方案",
+      "ce.p_protocol1":"验证计划遵循医学 AI 国际报告标准——TRIPOD+AI、STARD-AI、DECIDE-AI、GMLP（FDA）以及 GOST R 59921。设有三个严格程度递增的队列：",
+      "ce.pr_c1":"<strong>队列 1（约 50,000）：</strong>在标注数据上进行内部留出验证",
+      "ce.pr_c2":"<strong>队列 2（约 20,000）：</strong>回顾性外部验证",
+      "ce.pr_c3":"<strong>队列 3（约 5,000）：</strong>在真实临床流程中开展 DECIDE-AI 前瞻性研究",
+      "ce.p_protocol2":"在每个阶段，按亚组（性别、年龄、儿科）的公平性控制均为必备要求。"
+    };
+    var ar = {
+      "docnav.hub":"المركز","toc.title":"في هذه الصفحة","pn.next":"التالي →","pn.prev":"← رجوع","side.sections":"الأقسام",
+      "side.grp_about":"المشروع","side.grp_evidence":"الأدلة","side.grp_more":"المزيد",
+      "side.about":"الرسالة والتموضع","side.product":"المنتج: ECG Hub","side.technology":"تقنية التوافق",
+      "side.evidence":"الأدلة السريرية","side.regulatory":"الحالة التنظيمية","side.publications":"المصادر والمنشورات","side.back_hub":"← مركز الوثائق",
+      "ce.meta_title":"الأدلة السريرية — وثائق ECG Reader",
+      "ce.meta_desc":"قاعدة أدلة ECG Reader: مجموعة تخطيطات القلب المفسَّرة، منشورات عن الأخطاء التشخيصية، مؤشرات التحقق المستهدفة وبروتوكول الدراسة السريرية.",
+      "ce.kicker":"الأدلة","ce.title":"قاعدة الأدلة السريرية",
+      "ce.lead":"يقوم النهج على مجموعات بيانات مفتوحة وعلى الأدبيات المنشورة حول سوء تفسير تخطيط القلب الواقعي. والمؤشرات أدناه أهداف للتحقق — وليست نتائج سريرية مُحقّقة.",
+      "ce.h_counters":"ثلاثة عدّادات للأدلة",
+      "ce.p_counters1":"تُوثَّق الأدلة بثلاثة عدّادات عامة — مجموعة البيانات، أدبيات الأخطاء، والحجم الإجمالي للمواد المُراجَعة.",
+      "ce.m_corpus":"تخطيطات في المجموعة","ce.m_errpubs":"منشورات عن الأخطاء","ce.m_units":"وحدة مواد",
+      "ce.h_corpus":"مجموعة تخطيطات القلب المفسَّرة",
+      "ce.p_corpus1":"نحو <strong>3.22 مليون</strong> تسجيل تخطيط قصير من مجموعات مفتوحة (CODE، MIMIC-IV-ECG، Chapman-Shaoxing، PTB-XL، Georgia، CinC2017، CPSC2018، SaMi-Trop، PTB Diagnostic، LUDB، INCART، عائلة MIT-BIH) إضافة إلى مجموعة Holter طويلة الأمد Icentia11k (نحو 11,000 مريض). وتظهر ملايين إضافية في مجموعات دراسات منشورات AI-ECG المفصلية.",
+      "ce.h_errors":"منشورات عن الأخطاء التشخيصية",
+      "ce.p_errors1":"البيانات المنشورة حول معدّل التفسير الخاطئ أو الفائت لتخطيط القلب تدعم الحاجة السريرية. نطاقات حسب التشخيص من 18 منشوراً:",
+      "ce.t_noso":"التشخيص","ce.t_err":"معدّل الخطأ (نطاق)",
+      "ce.e_afib":"الرجفان الأذيني","ce.e_av":"الإحصارات الأذينية البطينية","ce.e_lvh":"تضخّم البطين الأيسر","ce.e_qt":"QT طويل",
+      "ce.h_targets":"مؤشرات التحقق المستهدفة",
+      "ce.note_targets":"<strong>هذه أهداف وليست نتائج.</strong> القيم أدناه عتبات مستهدفة لبرنامج التحقق (DECIDE-AI) يجب تأكيدها على أتراب مستقبلية. وهي ليست ادّعاءً بدقّة مُحقّقة.",
+      "ce.m_av3":"إحصار أ.ب الدرجة III","ce.m_lqt":"QT طويل",
+      "ce.h_protocol":"بروتوكول التحقق",
+      "ce.p_protocol1":"يُخطّط للتحقق وفق معايير الإبلاغ الدولية للذكاء الاصطناعي في الطب — TRIPOD+AI وSTARD-AI وDECIDE-AI وGMLP (FDA) وGOST R 59921. وثلاثة أتراب بصرامة متصاعدة:",
+      "ce.pr_c1":"<strong>الترب 1 (نحو 50,000):</strong> تحقّق داخلي على بيانات موسومة (hold-out)",
+      "ce.pr_c2":"<strong>الترب 2 (نحو 20,000):</strong> تحقّق خارجي رجعي",
+      "ce.pr_c3":"<strong>الترب 3 (نحو 5,000):</strong> دراسة مستقبلية وفق DECIDE-AI ضمن مسار سريري حقيقي",
+      "ce.p_protocol2":"ضبط الإنصاف حسب الفئات الفرعية — الجنس والعمر والأطفال — متطلَّب في كل مرحلة."
+    };
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(window.I18N.ru[k]===undefined){window.I18N.ru[k]=/[<>]/.test(el.innerHTML)?el.innerHTML:el.textContent;}});
     window.I18N.en = Object.assign(window.I18N.en || {}, en);
+    window.I18N.zh = Object.assign(window.I18N.zh || {}, zh);
+    window.I18N.ar = Object.assign(window.I18N.ar || {}, ar);
   })();
   </script>
   <script src="../assets/app.js"></script>

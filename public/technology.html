@@ -160,7 +160,72 @@
       "te.h_security":"Data security",
       "te.p_security1":"Personal data of Russian citizens is processed within Russia (152-FZ + 242-FZ), with a target protection level UZ-2 per FSTEC requirements. All clinically significant events are written to an immutable audit log with a SHA-256 hash chain, suitable for WORM storage. GDPR and HIPAA circuits are provided for the international deployment."
     };
+    var zh = {
+      "docnav.hub":"中心","toc.title":"本页内容","pn.next":"下一页 →","pn.prev":"← 返回","side.sections":"章节",
+      "side.grp_about":"项目","side.grp_evidence":"证据","side.grp_more":"更多",
+      "side.about":"使命与定位","side.product":"产品：ECG Hub","side.technology":"共识技术",
+      "side.evidence":"临床证据","side.regulatory":"监管状态","side.publications":"来源与文献","side.back_hub":"← 文档中心",
+      "te.meta_title":"共识技术 — ECG Reader 文档",
+      "te.meta_desc":"ECG Reader 共识引擎：一致性公式、各分量、安全覆盖、基于临床规则的规则引擎、微服务架构与数据安全。",
+      "te.kicker":"技术","te.title":"共识引擎与规则引擎",
+      "te.lead":"两个模型的一致性以一个透明的数值表示。其上运行基于临床标准的硬性安全规则——即使模型“一致”，也能防止漏诊危及生命的状况。",
+      "te.h_formula":"一致性公式",
+      "te.p_formula1":"综合一致性分值 <code>K</code> 是四个分量的加权和。权重反映临床优先级：紧急性比形式上的诊断匹配更重要。",
+      "te.h_components":"各分量",
+      "te.c_u":"<strong>U — 紧急性（0.40）：</strong>各模型所赋紧急级别的匹配度",
+      "te.c_d":"<strong>D — 诊断（0.30）：</strong>诊断标签的重叠，考虑层级（相关诊断部分计入）",
+      "te.c_m":"<strong>M — 测量（0.15）：</strong>数值参数（心率、PR/QRS/QT 间期）的一致性，并按记录质量调整",
+      "te.c_r":"<strong>R — 节律（0.15）：</strong>节律分类的匹配",
+      "te.h_safety":"安全规则（覆盖）",
+      "te.p_safety1":"安全优先于一致性。若干硬性规则会覆盖 <code>K</code> 的计算：",
+      "te.note_safety":"<strong>安全覆盖。</strong> 任一模型出现“红色”（危及生命）标志 → ALERT。关键诊断不一致 → ALERT。超过 QTc 阈值 → 单独发出尖端扭转风险警告。",
+      "te.h_rules":"规则引擎",
+      "te.p_rules1":"在 AI 之外，规则引擎依据可配置的 YAML 标准运行，并引用国际标准。基础规则：",
+      "te.r_stemi":"<strong>STEMI</strong> — 第四版心肌梗死通用定义（4UDMI 2018）+ AHA 标准",
+      "te.r_av":"<strong>三度房室传导阻滞</strong> — 完全性房室分离",
+      "te.r_qt":"<strong>长 QT</strong> — 双阈值 480 / 500 ms 与尖端扭转风险",
+      "te.h_arch":"架构",
+      "te.p_arch1":"后端为 FastAPI 微服务。处理流水线：接入 → 信号预处理 → 并行（ML 推理 + 规则 + 合作方 AI）→ 共识引擎 → 报告生成 → 不可变审计。",
+      "te.pipeline":"ingest → preproc → [ ML ‖ rules ‖ partner ] → consensus → report → audit",
+      "te.p_arch2":"预处理遵循 AHA 标准化（0.05–150 Hz 滤波、50/60 Hz 陷波、500 Hz 重采样、AAMI 质量控制）。报告以 JSON、HL7 FHIR R4、DICOM SR 与 PDF 生成。",
+      "te.h_security":"数据安全",
+      "te.p_security1":"俄罗斯公民的个人数据在俄罗斯境内处理（152-FZ + 242-FZ），按 FSTEC 要求目标防护等级为 UZ-2。所有具临床意义的事件写入带 SHA-256 哈希链的不可变审计日志，适用于 WORM 存储。面向国际部署提供 GDPR 与 HIPAA 回路。"
+    };
+    var ar = {
+      "docnav.hub":"المركز","toc.title":"في هذه الصفحة","pn.next":"التالي →","pn.prev":"← رجوع","side.sections":"الأقسام",
+      "side.grp_about":"المشروع","side.grp_evidence":"الأدلة","side.grp_more":"المزيد",
+      "side.about":"الرسالة والتموضع","side.product":"المنتج: ECG Hub","side.technology":"تقنية التوافق",
+      "side.evidence":"الأدلة السريرية","side.regulatory":"الحالة التنظيمية","side.publications":"المصادر والمنشورات","side.back_hub":"← مركز الوثائق",
+      "te.meta_title":"تقنية التوافق — وثائق ECG Reader",
+      "te.meta_desc":"محرّك التوافق في ECG Reader: صيغة الاتفاق، المكوّنات، التجاوزات الأمانية، محرّك قواعد سريري، بنية الخدمات الدقيقة وأمن البيانات.",
+      "te.kicker":"التقنية","te.title":"محرّك التوافق ومحرّك القواعد",
+      "te.lead":"يُعبَّر عن الاتفاق بين النموذجين برقم واحد شفّاف. وفوقه تعمل قواعد أمان صارمة مبنية على معايير سريرية — تمنع تفويت حالة مهدِّدة للحياة حتى عندما «يتّفق» النموذجان.",
+      "te.h_formula":"صيغة الاتفاق",
+      "te.p_formula1":"درجة الاتفاق الإجمالية <code>K</code> هي مجموع موزون لأربعة مكوّنات. وتعكس الأوزان الأولوية السريرية: الإلحاح أهمّ من التطابق الشكلي للتشخيص.",
+      "te.h_components":"المكوّنات",
+      "te.c_u":"<strong>U — الإلحاح (0.40):</strong> تطابق مستويات الإلحاح التي أسندها كل نموذج",
+      "te.c_d":"<strong>D — التشخيص (0.30):</strong> تداخل تسميات التشخيص مع مراعاة التسلسل الهرمي (تُحتسب التشخيصات المترابطة جزئياً)",
+      "te.c_m":"<strong>M — القياسات (0.15):</strong> اتساق المعطيات الرقمية (معدّل القلب، فترات PR/QRS/QT) مع تعديل بحسب جودة التسجيل",
+      "te.c_r":"<strong>R — النظم (0.15):</strong> تطابق تصنيف النظم",
+      "te.h_safety":"قواعد الأمان (التجاوزات)",
+      "te.p_safety1":"الأمان أولى من الاتفاق. عدّة قواعد صارمة تتجاوز حساب <code>K</code>:",
+      "te.note_safety":"<strong>تجاوز أماني.</strong> أي علامة «حمراء» (مهدِّدة للحياة) من أي نموذج ← ALERT. تباين في تشخيص حرج ← ALERT. تجاوز عتبة QTc ← تحذير منفصل من خطر تورساد.",
+      "te.h_rules":"محرّك القواعد",
+      "te.p_rules1":"إلى جانب الذكاء الاصطناعي، يعمل محرّك قواعد على معايير YAML قابلة للضبط تشير إلى معايير دولية. القواعد الأساسية:",
+      "te.r_stemi":"<strong>STEMI</strong> — التعريف العالمي الرابع لاحتشاء عضلة القلب (4UDMI 2018) + معايير AHA",
+      "te.r_av":"<strong>إحصار أذيني بطيني من الدرجة الثالثة</strong> — انفصال أذيني بطيني تامّ",
+      "te.r_qt":"<strong>QT طويل</strong> — عتبتان 480 / 500 ms وخطر تورساد",
+      "te.h_arch":"البنية",
+      "te.p_arch1":"الخلفية خدمات دقيقة على FastAPI. خط المعالجة: استقبال ← معالجة أولية للإشارة ← بالتوازي (استدلال ML + قواعد + ذكاء شريك) ← محرّك التوافق ← توليد التقرير ← تدقيق غير قابل للتغيير.",
+      "te.pipeline":"ingest → preproc → [ ML ‖ rules ‖ partner ] → consensus → report → audit",
+      "te.p_arch2":"تتبع المعالجة الأولية معايير AHA (مرشّحات 0.05–150 هرتز، حزّ 50/60 هرتز، إعادة أخذ عينات 500 هرتز، ضبط جودة AAMI). وتُنتَج التقارير بصيغ JSON وHL7 FHIR R4 وDICOM SR وPDF.",
+      "te.h_security":"أمن البيانات",
+      "te.p_security1":"تُعالَج البيانات الشخصية لمواطني روسيا داخل روسيا (152-FZ + 242-FZ)، بمستوى حماية مستهدف UZ-2 وفق متطلّبات FSTEC. وتُكتب جميع الأحداث ذات الدلالة السريرية في سجل تدقيق غير قابل للتغيير بسلسلة تجزئة SHA-256، مناسب للتخزين WORM. وتتوفّر دارات GDPR وHIPAA للنشر الدولي."
+    };
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(window.I18N.ru[k]===undefined){window.I18N.ru[k]=/[<>]/.test(el.innerHTML)?el.innerHTML:el.textContent;}});
     window.I18N.en = Object.assign(window.I18N.en || {}, en);
+    window.I18N.zh = Object.assign(window.I18N.zh || {}, zh);
+    window.I18N.ar = Object.assign(window.I18N.ar || {}, ar);
   })();
   </script>
   <script src="../assets/app.js"></script>
