@@ -178,6 +178,9 @@
   align-self: flex-start;
 }
 .doc-card .doc-open:hover { color: var(--accent-h); }
+.doc-card .doc-links { display: flex; gap: var(--sp-5); align-items: center; }
+.doc-card .doc-open.pdf { color: var(--text-dim); }
+.doc-card .doc-open.pdf:hover { color: var(--accent); }
 
 /* ---------- ACCESS BAND ---------- */
 .access-band {
