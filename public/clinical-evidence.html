@@ -76,13 +76,13 @@
         <h2 id="counters" data-i18n="ce.h_counters">Три счётчика доказательной базы</h2>
         <p data-i18n="ce.p_counters1">Доказательная часть документирована тремя публичными счётчиками — корпус данных, литература об ошибках и общий объём проработанных материалов.</p>
         <div class="metric-row">
-          <div class="metric"><div class="val">≈3,22<span style="font-size:14px">М</span></div><div class="lbl" data-i18n="ce.m_corpus">ЭКГ-записей в корпусе</div></div>
+          <div class="metric"><div class="val">≈385,5<span style="font-size:14px">тыс.</span></div><div class="lbl" data-i18n="ce.m_corpus">размеченных ЭКГ в корпусе</div></div>
           <div class="metric"><div class="val">18</div><div class="lbl" data-i18n="ce.m_errpubs">публикаций об ошибках</div></div>
           <div class="metric"><div class="val">≈345</div><div class="lbl" data-i18n="ce.m_units">единиц материалов</div></div>
         </div>
 
         <h2 id="corpus" data-i18n="ce.h_corpus">Корпус интерпретированных ЭКГ</h2>
-        <p data-i18n="ce.p_corpus1">Около <strong>3,22 млн</strong> коротких ЭКГ-записей из открытых корпусов (CODE, MIMIC-IV-ECG, Chapman-Shaoxing, PTB-XL, Georgia, CinC2017, CPSC2018, SaMi-Trop, PTB Diagnostic, LUDB, INCART, семейство MIT-BIH) плюс длительный холтеровский корпус Icentia11k (≈11 000 пациентов). В исследовательскую популяцию milestone-публикаций AI-ECG входят миллионы дополнительных записей.</p>
+        <p data-i18n="ce.p_corpus1"><strong>≈385 500</strong> размеченных ЭКГ из открытых корпусов (фактически распакованный размеченный корпус; до ~478 тыс. записей агрегированно с частично неразмеченными). Базы: PTB-XL, Chapman-Shaoxing/Ningbo, CinC 2020, ZZU pECG, CinC 2017. Для обучения коммерческой модели используются только коммерчески допустимые датасеты (PTB-XL — CC BY, Chapman — CC BY); датасеты с запретом коммерческого использования (MIMIC-IV-ECG, CODE/CODE-15) в production-обучение не включаются.</p>
 
         <h2 id="errors" data-i18n="ce.h_errors">Публикации о врачебных ошибках</h2>
         <p data-i18n="ce.p_errors1">Опубликованные данные о частоте ошибочной или пропущенной интерпретации ЭКГ — обоснование клинической потребности. Диапазоны по нозологиям из 18 публикаций:</p>
@@ -103,10 +103,10 @@
           <span data-i18n="ce.note_targets"><strong>Это цели, а не результаты.</strong> Значения ниже — целевые пороги программы валидации (DECIDE-AI), которые предстоит подтвердить на проспективных когортах. Они не являются заявлением о достигнутой точности.</span>
         </div>
         <div class="metric-row">
-          <div class="metric"><div class="val">0,992</div><div class="lbl">STEMI</div></div>
-          <div class="metric"><div class="val">0,974</div><div class="lbl">AFib</div></div>
-          <div class="metric"><div class="val">1,000</div><div class="lbl" data-i18n="ce.m_av3">АВ-блок III</div></div>
-          <div class="metric"><div class="val">0,997</div><div class="lbl" data-i18n="ce.m_lqt">Long QT</div></div>
+          <div class="metric"><div class="val">0,992</div><div class="lbl">STEMI · цель</div></div>
+          <div class="metric"><div class="val">0,974</div><div class="lbl">AFib · цель</div></div>
+          <div class="metric"><div class="val">1,000</div><div class="lbl" data-i18n="ce.m_av3">АВ-блок III · цель</div></div>
+          <div class="metric"><div class="val">0,997</div><div class="lbl" data-i18n="ce.m_lqt">Long QT · цель</div></div>
         </div>
 
         <h2 id="protocol" data-i18n="ce.h_protocol">Протокол валидации</h2>
@@ -150,9 +150,9 @@
       "ce.lead":"The approach builds on open data corpora and the published literature on real ECG misinterpretation. The metrics below are validation targets — not achieved clinical results.",
       "ce.h_counters":"Three evidence counters",
       "ce.p_counters1":"The evidence is documented with three public counters — the data corpus, the error literature, and the total volume of reviewed materials.",
-      "ce.m_corpus":"ECGs in the corpus","ce.m_errpubs":"publications on error","ce.m_units":"material units",
-      "ce.h_corpus":"Interpreted-ECG corpus",
-      "ce.p_corpus1":"About <strong>3.22 million</strong> short ECG records from open corpora (CODE, MIMIC-IV-ECG, Chapman-Shaoxing, PTB-XL, Georgia, CinC2017, CPSC2018, SaMi-Trop, PTB Diagnostic, LUDB, INCART, the MIT-BIH family) plus the long-term Holter corpus Icentia11k (≈11,000 patients). Millions more records appear in the study populations of milestone AI-ECG publications.",
+      "ce.m_corpus":"labelled ECGs in the corpus","ce.m_errpubs":"publications on error","ce.m_units":"material units",
+      "ce.h_corpus":"Labelled-ECG corpus",
+      "ce.p_corpus1":"<strong>≈385,500</strong> labelled ECGs from open corpora (the actually unpacked labelled corpus; up to ~478k records aggregated with partly unlabelled ones). Bases: PTB-XL, Chapman-Shaoxing/Ningbo, CinC 2020, ZZU pECG, CinC 2017. Only commercially permissible datasets are used to train the commercial model (PTB-XL — CC BY, Chapman — CC BY); datasets that forbid commercial use (MIMIC-IV-ECG, CODE/CODE-15) are excluded from production training.",
       "ce.h_errors":"Publications on diagnostic error",
       "ce.p_errors1":"Published data on the rate of erroneous or missed ECG interpretation underpin the clinical need. Ranges by nosology from 18 publications:",
       "ce.t_noso":"Nosology","ce.t_err":"Error rate (range)",
@@ -178,9 +178,9 @@
       "ce.lead":"方法建立在开放数据语料库以及关于真实心电图误读的已发表文献之上。以下指标为验证目标，而非已取得的临床结果。",
       "ce.h_counters":"三项证据计数",
       "ce.p_counters1":"证据部分以三项公开计数记录——数据语料库、差错文献，以及所审阅材料的总量。",
-      "ce.m_corpus":"语料库心电图","ce.m_errpubs":"关于差错的文献","ce.m_units":"材料单元",
-      "ce.h_corpus":"已判读心电图语料库",
-      "ce.p_corpus1":"约 <strong>322 万</strong>条来自开放语料库的短时心电图记录（CODE、MIMIC-IV-ECG、Chapman-Shaoxing、PTB-XL、Georgia、CinC2017、CPSC2018、SaMi-Trop、PTB Diagnostic、LUDB、INCART、MIT-BIH 系列），外加长时 Holter 语料库 Icentia11k（约 11,000 名患者）。AI-ECG 里程碑文献的研究人群中还包含数以百万计的更多记录。",
+      "ce.m_corpus":"语料库中已标注心电图","ce.m_errpubs":"关于差错的文献","ce.m_units":"材料单元",
+      "ce.h_corpus":"已标注心电图语料库",
+      "ce.p_corpus1":"<strong>约 385,500</strong> 条来自开放语料库的已标注心电图（实际解压的已标注语料；与部分未标注数据合计最多约 47.8 万条）。数据库：PTB-XL、Chapman-Shaoxing/Ningbo、CinC 2020、ZZU pECG、CinC 2017。训练商业模型仅使用允许商用的数据集（PTB-XL — CC BY，Chapman — CC BY）；禁止商用的数据集（MIMIC-IV-ECG、CODE/CODE-15）不纳入生产训练。",
       "ce.h_errors":"关于诊断差错的文献",
       "ce.p_errors1":"关于心电图误读或漏读发生率的已发表数据，构成临床需求的依据。来自 18 篇文献按病种的区间：",
       "ce.t_noso":"病种","ce.t_err":"差错率（区间）",
@@ -206,9 +206,9 @@
       "ce.lead":"يقوم النهج على مجموعات بيانات مفتوحة وعلى الأدبيات المنشورة حول سوء تفسير تخطيط القلب الواقعي. والمؤشرات أدناه أهداف للتحقق — وليست نتائج سريرية مُحقّقة.",
       "ce.h_counters":"ثلاثة عدّادات للأدلة",
       "ce.p_counters1":"تُوثَّق الأدلة بثلاثة عدّادات عامة — مجموعة البيانات، أدبيات الأخطاء، والحجم الإجمالي للمواد المُراجَعة.",
-      "ce.m_corpus":"تخطيطات في المجموعة","ce.m_errpubs":"منشورات عن الأخطاء","ce.m_units":"وحدة مواد",
-      "ce.h_corpus":"مجموعة تخطيطات القلب المفسَّرة",
-      "ce.p_corpus1":"نحو <strong>3.22 مليون</strong> تسجيل تخطيط قصير من مجموعات مفتوحة (CODE، MIMIC-IV-ECG، Chapman-Shaoxing، PTB-XL، Georgia، CinC2017، CPSC2018، SaMi-Trop، PTB Diagnostic، LUDB، INCART، عائلة MIT-BIH) إضافة إلى مجموعة Holter طويلة الأمد Icentia11k (نحو 11,000 مريض). وتظهر ملايين إضافية في مجموعات دراسات منشورات AI-ECG المفصلية.",
+      "ce.m_corpus":"تخطيطات موسومة في المجموعة","ce.m_errpubs":"منشورات عن الأخطاء","ce.m_units":"وحدة مواد",
+      "ce.h_corpus":"مجموعة تخطيطات القلب الموسومة",
+      "ce.p_corpus1":"<strong>نحو 385,500</strong> تخطيط قلب موسوم من مجموعات مفتوحة (المجموعة الموسومة المُستخرَجة فعلياً؛ حتى نحو 478 ألف تسجيل بالإجمال مع بيانات غير موسومة جزئياً). القواعد: PTB-XL، Chapman-Shaoxing/Ningbo، CinC 2020، ZZU pECG، CinC 2017. لتدريب النموذج التجاري تُستخدم فقط مجموعات البيانات المسموح بها تجارياً (PTB-XL — CC BY، Chapman — CC BY)؛ أما المجموعات التي تمنع الاستخدام التجاري (MIMIC-IV-ECG، CODE/CODE-15) فتُستبعَد من تدريب الإنتاج.",
       "ce.h_errors":"منشورات عن الأخطاء التشخيصية",
       "ce.p_errors1":"البيانات المنشورة حول معدّل التفسير الخاطئ أو الفائت لتخطيط القلب تدعم الحاجة السريرية. نطاقات حسب التشخيص من 18 منشوراً:",
       "ce.t_noso":"التشخيص","ce.t_err":"معدّل الخطأ (نطاق)",

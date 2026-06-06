@@ -78,7 +78,11 @@
         <p data-i18n="pr.p_hub2">Такая архитектура снижает риск ложного заключения: ошибка одной модели не проходит молча, а вызывает рассогласование, которое система обязана показать пользователю и врачу.</p>
 
         <h2 id="dual" data-i18n="pr.h_dual">Два независимых ИИ</h2>
-        <p data-i18n="pr.p_dual1">Снимок обрабатывают одновременно <strong>собственный движок ECG Reader</strong> и <strong>партнёрский диагностический ИИ</strong>. Движки разработаны независимо и не делят общую модель — это и даёт ценность перекрёстной проверки.</p>
+        <p data-i18n="pr.p_dual1">По замыслу снимок обрабатывают одновременно <strong>собственный движок ECG Reader</strong> и <strong>партнёрский диагностический ИИ</strong>. Движки разрабатываются независимо и не делят общую модель — это и даёт ценность перекрёстной проверки.</p>
+        <div class="callout warn">
+          <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span data-i18n="pr.note_status">Статус на 2026-06-05: двойной AI-консенсус — целевая архитектура, не реализована. Обучена одна модель-прототип (1D-ResNet, PTB-XL); второй движок — mock, партнёрство не подписано. Сервис на стадии разработки и не является зарегистрированным медизделием.</span>
+        </div>
         <div class="callout info">
           <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
           <span data-i18n="pr.note_dual">Перекрёстная проверка двумя независимыми моделями — основной механизм безопасности продукта и юридической защиты оператора.</span>
@@ -151,6 +155,7 @@
       "pr.h_dual":"Two independent AIs",
       "pr.p_dual1":"The image is processed simultaneously by the <strong>ECG Reader in-house engine</strong> and a <strong>partner diagnostic AI</strong>. The engines are developed independently and do not share a common model — which is exactly what makes the cross-check valuable.",
       "pr.note_dual":"Cross-checking by two independent models is the product’s core safety mechanism and the operator’s legal safeguard.",
+      "pr.note_status":"Status as of 2026-06-05: the dual-AI consensus is a target architecture, not yet implemented. One prototype model is trained (1D-ResNet, PTB-XL); the second engine is a mock, the partnership is not signed. The service is under development and is not a registered medical device.",
       "pr.h_routing":"Consensus routing",
       "pr.p_routing1":"The consensus engine computes an integral agreement score and routes the report into one of three scenarios. Any “red” (life-threatening) flag from either model forces the result to ALERT (safety override).",
       "pr.t_route":"Scenario","pr.t_score":"Agreement","pr.t_action":"Action",
@@ -182,6 +187,7 @@
       "pr.h_dual":"两个独立 AI",
       "pr.p_dual1":"该图像由 <strong>ECG Reader 自有引擎</strong>与<strong>合作方诊断 AI</strong> 同时处理。两个引擎独立研发，不共享同一模型——这正是交叉核验的价值所在。",
       "pr.note_dual":"由两个独立模型进行交叉核验，是本产品的核心安全机制，也是运营方的法律保障。",
+      "pr.note_status":"截至 2026-06-05 的状态：双 AI 共识为目标架构，尚未实现。已训练一个原型模型（1D-ResNet，PTB-XL）；第二个引擎为占位模拟，合作尚未签署。该服务处于开发阶段，并非注册医疗器械。",
       "pr.h_routing":"共识路由",
       "pr.p_routing1":"共识引擎计算综合一致性分值，并将报告路由到三种情形之一。任一模型出现“红色”（危及生命）标志，都会强制将结果置为 ALERT（安全覆盖）。",
       "pr.t_route":"情形","pr.t_score":"一致性","pr.t_action":"动作",
@@ -213,6 +219,7 @@
       "pr.h_dual":"ذكاءان مستقلّان",
       "pr.p_dual1":"تُعالَج الصورة في آنٍ واحد بواسطة <strong>محرّك ECG Reader الداخلي</strong> و<strong>ذكاء تشخيصي شريك</strong>. وقد طُوّر المحرّكان بشكل مستقل ولا يتشاركان نموذجاً واحداً — وهذا تحديداً ما يجعل التحقّق المتقاطع ذا قيمة.",
       "pr.note_dual":"التحقّق المتقاطع بنموذجين مستقلّين هو آلية الأمان الأساسية للمنتج والضمانة القانونية للمشغّل.",
+      "pr.note_status":"الحالة حتى 2026-06-05: توافق الذكاءين هو بنية مستهدفة لم تُنفّذ بعد. تم تدريب نموذج أولي واحد (1D-ResNet، PTB-XL)؛ المحرّك الثاني محاكاة مؤقتة، والشراكة لم تُوقَّع. الخدمة قيد التطوير وليست جهازاً طبياً مُسجّلاً.",
       "pr.h_routing":"توجيه التوافق",
       "pr.p_routing1":"يحسب محرّك التوافق درجة اتفاق إجمالية ويوجّه التقرير إلى أحد ثلاثة سيناريوهات. وأي علامة «حمراء» (مهدِّدة للحياة) من أي من النموذجين تفرض نتيجة ALERT (تجاوز أماني).",
       "pr.t_route":"السيناريو","pr.t_score":"الاتفاق","pr.t_action":"الإجراء",
